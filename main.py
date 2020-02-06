@@ -8,7 +8,7 @@ def main():
     
     encrypt = input("Enter E to encrypt, D to decrypt, and Q to quit: ")
     print(encrypt)
-    while encrypt.lower() != "e" or "d" or "q":
+    while encrypt.lower() != "e" or encrypt.lower() == "d" or encrypt.lower() == "q":
         encrypt = input("Please try again with a valid input (E, D, or Q): ")
         print(encrypt)
 
