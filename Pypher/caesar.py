@@ -10,18 +10,14 @@
     Output2: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD"""
 def caesar_encrypt(word, shift=3, mod=26):
     output = ""
-    if (type(word) == char):
-        ascChar = ord(word)
-        output = chr((ascChar + shift) % mod)
-        return output
-    elif (type(word) == str):
+    if (type(word) != str):
+        return "Input must be a string"
+    else:    
         for letter in word:
             ascChar = ord(letter)
             newChar = chr((ascChar + shift) % mod)
-            output += ascChar
+            output += newChar
         return output
-    else:
-        return "Input must be either a string or character"
 
 """ Decryption for Caesar:
     ------Arguments------

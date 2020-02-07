@@ -1,5 +1,5 @@
 from .caesar import caesar_encrypt
-from .atbash import atbash_encrypt
+#from .atbash import atbash_encrypt
 
 """ Initialized with the following:
     ciphString: User input string, to be encrypted, required
@@ -16,8 +16,8 @@ class Encrypt:
         self.mod = mod
 
         self.ciphers = {
-                "caesar": caesar_encrypt(ciphString, shift, mod),
-                "atbash": atbash_encrypt(ciphString, shift, mod)
+                "caesar": caesar_encrypt(ciphString, shift, mod)
+                #"atbash": atbash_encrypt(ciphString, shift, mod)
         }
     def get_encryption(self):
-        return self.ciphers.get(cipher)
+        return self.ciphers.get(self.cipher)

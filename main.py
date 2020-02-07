@@ -1,46 +1,33 @@
 import sys
-import inquirer
+from Pypher import ConsoleInput, Encrypt
 
 def main():
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
     print("Welcome to Jonathan's Cipher and Encryption program!")
-    print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
     
-    encrypt = input("Enter E to encrypt, D to decrypt, and Q to quit: ")
-    print(encrypt)
-    while encrypt.lower() != "e" or encrypt.lower() == "d" or encrypt.lower() == "q":
-        encrypt = input("Please try again with a valid input (E, D, or Q): ")
-        print(encrypt)
+    print("++++++++++Choose quit at any time to exit.++++++++++\n")
+    cipherDict = ConsoleInput.get_cipher()
+    cipher = cipherDict.get("options").lower()
+    #print(cipher)
 
-    if encrypt.lower() == "q":
+    if (cipher == "quit"):
         sys.exit()
+    
+    encryptionDict = ConsoleInput.get_cryption()
+    encryption = encryptionDict.get("options").lower()
+    #print(encryption)
 
-    """encrypt = [
-            inquirer.Confirm('encrypted',
-                message="Would you like to encrypt?",
-                default=True),
-    ]
-    encryption = inquirer.prompt(encrypt)
-    print(encryption)
-    encrypt = input("Would you like to encrypt? (Y/N): ")
-    print(encrypt)
-    if encrypt.lower() != "yes" or encrypt.lower() != "y":
-        #print("I'm Here!")
-        decrypt = input("Would you like to decrypt, then? (Y/N): ")
-        print(decrypt)
-        if decrypt.lower() != "yes" or decrypt.lower() != "y":
-            print("Failure!")
-            sys.exit()"""
-
-    #change choices to be an object passed from folder with ciphers, this will work for now
-    ciphers = [
-            inquirer.List('options',
-                message="What cipher would you like to use?",
-                choices=['Caesar', 'Atbash'],
-            ),
-    ]
-    chosenCipher = inquirer.prompt(ciphers)
-    print(chosenCipher)
+    if (encryption == "quit"):
+        sys.exit()
+    
+    wordOption = ConsoleInput.get_word(encryption)
+    #print(cipher)
+    #print(encryption)
+    #print(wordOption)
+    if (encryption == "encrypt"):
+        work = Encrypt(wordOption, cipher)
+        print("Your encrypted message is: " + work.get_encryption())
 
 if __name__ == "__main__":
     main()
