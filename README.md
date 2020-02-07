@@ -1,4 +1,4 @@
 # PyCipher
-Learning Git with a Python-based Cipher/encryption program
+A Python-based Caesar Cipher program capable of encryption or decryption. Utilizes the inquirer library to allow multiple choice questions, as well as some straight input. Documentation of expected output and arguments can be found within objects in Pypher folder.
 
-Implement a webscraper maybe
+Thanks for stopping by!
