@@ -19,5 +19,7 @@ class Encrypt:
                 "caesar": caesar_encrypt(ciphString, shift, mod)
                 #"atbash": atbash_encrypt(ciphString, shift, mod)
         }
+    
     def get_encryption(self):
-        return self.ciphers.get(self.cipher)
+        word = self.ciphers.get(self.cipher)
+        return word

@@ -1,5 +1,5 @@
 import sys
-from Pypher import ConsoleInput, Encrypt
+from Pypher import ConsoleInput, Encrypt, Decrypt
 
 def main():
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -9,25 +9,23 @@ def main():
     print("++++++++++Choose quit at any time to exit.++++++++++\n")
     cipherDict = ConsoleInput.get_cipher()
     cipher = cipherDict.get("options").lower()
-    #print(cipher)
 
     if (cipher == "quit"):
         sys.exit()
     
     encryptionDict = ConsoleInput.get_cryption()
     encryption = encryptionDict.get("options").lower()
-    #print(encryption)
 
     if (encryption == "quit"):
         sys.exit()
     
     wordOption = ConsoleInput.get_word(encryption)
-    #print(cipher)
-    #print(encryption)
-    #print(wordOption)
     if (encryption == "encrypt"):
         work = Encrypt(wordOption, cipher)
-        print("Your encrypted message is: " + work.get_encryption())
+        print("Your encrypted message is: " + str(work.get_encryption()))
+    elif (encryption == "decrypt"):
+        work = Decrypt(wordOption, cipher)
+        print("Your decrypted message is: " + str(work.get_decryption()))
 
 if __name__ == "__main__":
     main()

@@ -8,7 +8,7 @@ class ConsoleInput():
         ciphers = [
                 inquirer.List('options',
                     message="What cipher would you like to use?",
-                    choices=['Caesar', 'Atbash', 'Quit'],
+                    choices=['Caesar', 'Quit'],
                     ),
         ]
         return inquirer.prompt(ciphers)

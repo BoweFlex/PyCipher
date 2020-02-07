@@ -14,9 +14,16 @@ def caesar_encrypt(word, shift=3, mod=26):
         return "Input must be a string"
     else:    
         for letter in word:
-            ascChar = ord(letter)
-            newChar = chr((ascChar + shift) % mod)
-            output += newChar
+            if (letter.isupper()):
+                ascChar = ord(letter)
+                newChar = chr((ascChar - shift - 65) % mod + 65)
+                output += newChar
+            elif (letter.islower()):
+                ascChar = ord(letter)
+                newChar = chr((ascChar - shift - 97) % mod + 97)
+                output += newChar
+            else:
+                output += letter
         return output
 
 """ Decryption for Caesar:
@@ -29,15 +36,18 @@ def caesar_encrypt(word, shift=3, mod=26):
     Output1: ABCDEFGHIJKLMNOPQRSTUVWXYZ"""
 def caesar_decrypt(word, shift=3, mod=26):
     output = ""
-    if (type(word) == char):
-        ascChar = ord(word)
-        output = chr((ascChar - shift) % mod)
-        return output
-    elif (type(word) == str):
+    if (type(word) != str):
+        return "Input must be a string"
+    else:    
         for letter in word:
-            ascChar = ord(letter)
-            newChar = chr((ascChar - shift) % mod)
-            output += ascChar
+            if (letter.isupper()):
+                ascChar = ord(letter)
+                newChar = chr((ascChar + shift - 65) % mod + 65)
+                output += newChar
+            elif (letter.islower()):
+                ascChar = ord(letter)
+                newChar = chr((ascChar + shift - 97) % mod + 97)
+                output += newChar
+            else:
+                output += letter
         return output
-    else:
-        return "Input must be either a string or character"
