@@ -37,7 +37,7 @@ class Atbash:
 def atbashEncryption(self, string):
     tempLetter = 'a'
     for letter in string:
-        tempLetter = self.cipher[letter]
+        tempLetter = self.cipher.get(letter, 'a')
         letter = tempLetter
 
 
