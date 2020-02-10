@@ -11,4 +11,6 @@ A Python-based Caesar Cipher program capable of encryption or decryption. Built 
 
 Utilizes the inquirer library to allow multiple choice questions, as well as some straight input. 
 
+Designed to be easily scalable to include more ciphers, and with relatively little work could have key based ciphers added as well. Mostly "abandoned" to move to other projects and other skills.
+
 Documentation of expected output and arguments can be found within objects in Pypher folder.
